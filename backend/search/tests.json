@@ -1,0 +1,20 @@
+{
+  "tests": [
+    {
+      "name": "Web search",
+      "method": "GET",
+      "path": "/?q=python+programming",
+      "expectedStatus": 200,
+      "expectedBody": {"query": "python programming"},
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Empty query",
+      "method": "GET",
+      "path": "/?q=",
+      "expectedStatus": 400,
+      "expectedBody": {"error": "Query is required"},
+      "bodyMatcher": "partial"
+    }
+  ]
+}
